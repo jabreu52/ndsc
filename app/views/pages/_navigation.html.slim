@@ -1,0 +1,10 @@
+.navigation
+  ul
+    li class=("active" if current_page? root_path)
+      = link_to "Welcome", root_path
+    li class=("active" if current_page? agenda_path)
+      = link_to "Agenda", agenda_path
+    li class=("active" if current_page? logistics_path)
+      = link_to "Logistics", logistics_path
+    li class=("active" if current_page? contact_path)
+      = link_to "Contact", contact_path

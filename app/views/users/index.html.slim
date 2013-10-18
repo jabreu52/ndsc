@@ -1,0 +1,16 @@
+.jumbotron
+  .jumbotron-overlay
+    .jumbotron-school Harvard University
+    .jumbotron-date April 4-6, 2014
+    .jumbotron-button= link_to "REGISTRATION OPENING SOON", root_path
+.navigation
+  ul
+    li class=("active" if current_page? root_path)
+      = link_to "Welcome", root_path
+    li class=("active" if current_page? agenda_path)
+      = link_to "Agenda", agenda_path
+    li class=("active" if current_page? logistics_path)
+      = link_to "Logistics", logistics_path
+    li class=("active" if current_page? contact_path)
+      = link_to "Contact", contact_path
+div class="fb-like-box" data-href="https://www.facebook.com/pages/National-Dominican-Student-Conference/47619937613" data-width="600" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"

@@ -1,0 +1,324 @@
+// QUERIES
+// @include at-breakpoint($tablet)
+// @include at-breakpoint($computer)
+
+// PALETTE
+$black: #292f33
+$blue: #007CCC
+$red: #CC4141
+
+// MIXINS
+@mixin ellipsis
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+@mixin button-shadow($color)
+  box-shadow: 0 1px 0 darken($color, 25%)
+
+strong
+  font-weight: 700
+
+a, a:visited
+  color: $blue
+  text-decoration: none
+
+img
+  vertical-align: middle
+
+h1
+  font-size: em-calc(32)
+  font-weight: 600
+
+ul
+  list-style: none
+
+html
+  overflow-y: scroll
+
+body
+  color: $black
+  font-family: "proxima-nova", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+
+.group:after
+  clear: both
+  content: ""
+  display: table
+
+.debug_dump
+  background: whiteSmoke
+  clear: both
+  padding: em-calc(20)
+
+// CONTAINER
+.container
+  @include container($total-columns, $tablet, $computer)
+
+// HEADER
+header
+  border-bottom: 1px solid #EEE
+nav
+  @include container
+  ul
+    display: inline-block
+    li
+      display: inline-block
+      a
+        display: block
+        font-size: em-calc(12)
+        font-weight: 600
+        line-height: 54px
+        padding-right: em-calc(15)
+        @include at-breakpoint($tablet)
+          font-size: em-calc(16)
+          font-weight: normal
+          padding-left: em-calc(20)
+          padding-right: 0
+  ul.left
+    li.logo
+      a
+        background: $red
+        color: #FFF
+        font-weight: 700
+        padding: 0 em-calc(15)
+        @include at-breakpoint($tablet)
+          font-size: em-calc(24)
+          padding: 0 em-calc(12)
+  ul.right
+    float: right
+    li
+      a
+        color: #A0A0A0
+        text-transform: uppercase
+        &:hover
+          color: #706C75
+    li.active
+      a
+        color: #CC4141
+
+// FOOTER
+.footer
+  margin-bottom: em-calc(30)
+  @include container
+  a
+    color: #888
+    display: inline-block
+    padding: em-calc(8) 0 em-calc(8) em-calc(15)
+    @include at-breakpoint($tablet)
+      padding: em-calc(8) em-calc(15) em-calc(8) 0
+    &:hover
+      color: $blue
+    i
+      padding-right: em-calc(6)
+
+// NAVIGATION
+.navigation
+  background: white
+  ul
+    text-align: center
+    li
+      display: inline-block
+      line-height: 46px
+      a
+        color: #999
+        display: block
+        font-size: em-calc(14)
+        font-weight: 600
+        padding: 0 em-calc(15)
+        @include at-breakpoint($tablet)
+          font-size: em-calc(15)
+          padding: 0 em-calc(20)
+        &:hover
+          color: #706C75
+    li.active
+      a
+        color: #CC4141
+
+// JUMBOTRON
+.jumbotron
+  background: asset-url("harvard.png") right
+  height: em-calc(280)
+  padding: em-calc(30) 0
+  @include box-sizing(border-box)
+
+.jumbotron-overlay
+  background: rgba(0,0,0,0.55)
+  height: 100%
+  padding: em-calc(25) em-calc(15)
+  text-align: center
+  @include box-sizing(border-box)
+
+.jumbotron-school
+  color: #FFF
+  font-size: em-calc(34)
+  font-weight: 700
+  text-shadow: 0 2px 0 #000
+  @include at-breakpoint($tablet)
+    font-size: em-calc(42)
+
+.jumbotron-date
+  color: #DDD
+  font-size: em-calc(25)
+  font-weight: 400
+  margin: 13px 0 23px
+  text-shadow: 0 2px 2px #000
+
+.jumbotron-button
+  background: rgba(0,0,0,0.25)
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5),  rgba(0,0,0,0))
+  border: 1px solid #000
+  border-bottom: 0
+  border-radius: 8px 8px 0 0
+  display: block
+  padding: em-calc(12) em-calc(15)
+  @include at-breakpoint($tablet)
+    display: inline-block
+    width: 60%
+  a
+    background: #0097DA asset-url("waves.png")
+    border-radius: 6px
+    box-shadow: 0 2px 0 darken(#0097DA, 20%)
+    color: #FFF
+    display: inline-block
+    font-size: em-calc(15)
+    font-weight: 900
+    padding: 15px 0 13px
+    text-shadow: 0 1px 0 darken(#0097DA, 20%)
+    width: 100%
+
+// SECTIONS
+@mixin section-padding
+  padding: em-calc(20) em-calc(25)
+  @include at-breakpoint($tablet)
+    padding: em-calc(25) em-calc(40)
+
+.section
+  border-top: 1px solid #EEE
+  line-height: 1.4
+  margin-top: 1px
+  @include section-padding
+  &:last-child
+    border-bottom: 1px solid #E3E5E8
+  p
+    margin-bottom: em-calc(20)
+    &:last-child
+      margin-bottom: 0
+  a
+    font-weight: 600
+  li
+    list-style-type: square
+    margin: 0 0 em-calc(12)
+    &:last-child
+      margin-bottom: 0
+
+.section-grey
+  background: whiteSmoke
+  border-top: 1px solid #E3E5E8
+  color: #706C75
+
+.section-blue
+  background: #0097DA
+  border-top: 1px solid darken(#0097DA, 5%)
+  color: #FFF
+  font-weight: 600
+  a
+    background: #FFF
+    border-radius: 4px
+    padding: 2px 10px 4px
+
+.section-green
+  background: #8DC63F
+  color: #FFF
+  font-weight: 600
+
+.video
+  position: relative
+  padding-bottom: 60%
+  margin-bottom: em-calc(15)
+  iframe
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+
+// WELCOME
+.facebook
+  background: #FFF
+  border: 1px solid #E3E5E8
+  border-radius: 4px
+  padding: em-calc(2)
+  margin-top: em-calc(25)
+  @include box-sizing(border-box)
+
+#fb-root
+  display: none
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style]
+  width: 100% !important
+
+// ABOUT
+.ndsc_founders
+  margin-top: em-calc(24)
+  max-width: 100%
+  @include at-breakpoint($tablet)
+    float: right
+    max-width: 330px
+
+// HOST
+
+// .hint-box
+//   // background: #dff0d8
+//   background: #0097DA
+//   color: #FFF
+//   font-weight: 600
+//   // color: #468847
+//   margin-top: 1px
+//   // @include section-padding
+
+// SimpleForm Styles
+.simple_form
+  div.input
+    margin-bottom: em-calc(12)
+
+  label
+    color: #666
+    display: block
+    font-size: em-calc(14)
+    font-weight: 700
+    margin-bottom: em-calc(3)
+
+  input[type="text"], input[type="email"], input[type="password"], textarea
+    border: 1px solid #CCC
+    border-radius: 0
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.1)
+    display: block
+    font-size: em-calc(13)
+    padding: em-calc(8) em-calc(10) em-calc(7)
+    resize: none
+    width: 100%
+    -webkit-appearance: none
+    @include box-sizing(border-box)
+    &:focus
+      outline: none
+
+  button
+    background: $blue
+    border: 0
+    border-radius: 3px
+    color: #FFF
+    font-weight: 700
+    padding: em-calc(9) em-calc(25) em-calc(10)
+    @include button-shadow($blue)
+    &:hover
+      cursor: pointer
+
+  .field_with_errors
+    input
+      border: 1px solid red
+
+  .error
+    color: red
+    font-size: em-calc(14)
+    font-weight: 700

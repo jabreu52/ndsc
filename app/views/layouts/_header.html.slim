@@ -1,0 +1,16 @@
+header
+  nav
+    ul.left
+      li.logo
+        = link_to root_path do
+          | NDSC
+    ul.right
+      li class=("active" if params[:controller] == "pages")
+        = link_to root_path do
+          | 2013
+      li class=("active" if params[:controller] == "conference")
+        = link_to history_path do
+          | The Conference
+      li
+        = link_to root_path do
+          | The Network

@@ -1,0 +1,12 @@
+.navigation
+  ul
+    li class=("active" if current_page? history_path)
+      = link_to "About", history_path
+    li class=("active" if current_page? host_path)
+      = link_to "Host", host_path
+    / li class=("active" if current_page? board_path)
+    /   = link_to "Previous", board_path
+    / li class=("active" if current_page? media_path)
+    /   = link_to "Photos", media_path
+    li class=("active" if current_page? videos_path)
+      = link_to "Videos", videos_path

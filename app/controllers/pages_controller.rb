@@ -1,4 +1,8 @@
 class PagesController < ApplicationController
+  def welcome
+    redirect_to "http://www.dominicanstudentconference.com"
+  end
+
   def index
   end
 

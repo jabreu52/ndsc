@@ -8,6 +8,7 @@ Ndsc::Application.routes.draw do
   get 'host' => 'conference#host', as: :host
   get 'board' => 'conference#board', as: :board
   get 'videos' => 'conference#videos', as: :videos
+  get 'welcome' => 'pages#welcome', as: :welcome
   root 'pages#index'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :users

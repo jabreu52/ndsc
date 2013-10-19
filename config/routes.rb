@@ -1,4 +1,6 @@
 Ndsc::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'agenda' => 'pages#agenda', as: :agenda
   get 'logistics' => 'pages#logistics', as: :logistics
   get 'contact' => 'pages#contact', as: :contact

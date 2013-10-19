@@ -1,10 +1,13 @@
-= render "pages/navigation"
+= render "pages/facebook"
+.show-for-small
+  = render "pages/navigation"
 .jumbotron
   .jumbotron-overlay
     .jumbotron-school Harvard University
     .jumbotron-date April 4-6, 2014
     .jumbotron-button= link_to "REGISTRATION OPENING SOON", root_path
-= render "pages/facebook"
+.hide-for-small
+  = render "pages/navigation"
 .section.section-grey
   | The National Dominican Student Conference is an annual conference that provides the highest quality in educational and workshops, inspirational speakers, art exhibitions, networking events, and parties – all of which serve to educate, uplift, and unite the Dominican student community.
   .facebook

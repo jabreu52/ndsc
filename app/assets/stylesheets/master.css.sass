@@ -55,6 +55,16 @@ body
   clear: both
   padding: em-calc(20)
 
+.hide-for-small
+  display: none
+  @include at-breakpoint($tablet)
+    display: block
+
+.show-for-small
+  display: block
+  @include at-breakpoint($tablet)
+    display: none
+
 // CONTAINER
 .container
   @include container($total-columns, $tablet, $computer)

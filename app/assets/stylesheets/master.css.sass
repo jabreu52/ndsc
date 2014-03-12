@@ -354,3 +354,32 @@ nav
     color: red
     font-size: em-calc(14)
     font-weight: 700
+
+
+// TABLE
+.agenda
+  h1
+    margin-bottom: 13px
+  table
+    margin-bottom: 39px
+    width: 100%
+    tr
+      line-height: 52px
+      &:nth-child(odd)
+        border-radius: 3px
+        td
+          background: #f7f7f7
+          &:first-child
+            border-bottom-left-radius: 300px
+            border-top-left-radius: 300px
+          &:last-child
+            border-bottom-right-radius: 300px
+            border-top-right-radius: 300px
+      td
+        padding: 0 20px
+        &:first-child
+          font-weight: 600
+        &:last-child
+          text-align: right
+
+
